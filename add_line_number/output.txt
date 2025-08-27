@@ -1,0 +1,20 @@
+1: #include <stdio.h>
+2: int main(void)
+3: {
+4: FILE *p1,*p2; char c;
+5: p1 = fopen("datafile1.c", "r");
+6: p2 = fopen("parentheses.txt","w");
+7: if(!p1) printf("\nFile can't be opened!");
+8: else {
+9: while((c = fgetc(p1)) != EOF) {
+10: if ((c == '(') || (c == ')'))
+11: fputc(c, p2); } }
+12: fclose(p1);
+13: fclose(p2);
+14: p2 = fopen("parentheses.txt","r");
+15: while((c=fgetc(p2))!=EOF)
+16: printf("%c",c);
+17: 
+18: fclose(p2);
+19: return 0;
+20: }
