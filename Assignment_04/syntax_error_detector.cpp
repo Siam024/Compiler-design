@@ -41,7 +41,7 @@ int main()
                     int ok  = 0;
                     for(int j = m; j<l.size(); j++){
                         if(l[j] == ' '){
-                            ok += 1;
+                            ok ^= 1;
                         }
                     }
                 }
